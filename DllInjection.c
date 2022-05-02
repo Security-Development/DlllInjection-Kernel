@@ -109,17 +109,17 @@ typedef NTSTATUS (WINAPI *NewWriteMem)(
 
 typedef NTSTATUS (WINAPI *NewCreateThread)
 (
-	OUT PHANDLE hThread,
-	IN ACCESS_MASK DesiredAccess,
-	IN LPVOID ObjectAttributes,
-	IN HANDLE ProcessHandle,
-	IN LPTHREAD_START_ROUTINE lpStartAddress,
-	IN LPVOID lpParameter,
-	IN BOOL CreateSuspended,
-	IN ULONG StackZeroBits,
-	IN ULONG SizeOfStackCommit,
-	IN ULONG SizeOfStackReserve,
-	OUT LPVOID lpBytesBuffer
+	OUT  	PHANDLE 				 hThread,
+	IN  	ACCESS_MASK  				 DesiredAccess,
+	IN 	LPVOID  				 ObjectAttributes,
+	IN  	HANDLE  				 ProcessHandle,
+	IN  	LPTHREAD_START_ROUTINE  		 lpStartAddress,
+	IN  	LPVOID  				 lpParameter,
+	IN  	BOOL  					 CreateSuspended,
+	IN  	ULONG  					 StackZeroBits,
+	IN  	ULONG  					 SizeOfStackCommit,
+	IN  	ULONG  					 SizeOfStackReserve,
+	OUT  	LPVOID  				 lpBytesBuffer
 );
 
 DWORD GetProcessPID(wchar_t *ProcessName) {
@@ -180,7 +180,7 @@ HANDLE GetProcessHandle(DWORD ResponsePid) {
 BOOLEAN Kernel32Injecttion(DWORD pid) {
 	HANDLE hProc = GetProcessHandle(pid), hThread;
 	
-	char DllName[128] = "C:\\Users\\dltmd\\Desktop\\coding\\message.dll";
+	char DllName[128] = "dll path";
 	
 	NewAlloc NtAllocFunc = (NewAlloc) GetProcAddress(ntdll, "NtAllocateVirtualMemory");
 	NewWriteMem NtWriteFunc = (NewWriteMem) GetProcAddress(ntdll, "NtWriteVirtualMemory");
