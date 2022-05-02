@@ -2,7 +2,7 @@
 커널 함수로 dll injection을 시켜보았습니다.
 
 ## 시연 영상
-https://user-images.githubusercontent.com/35417717/166244247-1f76c32e-72ea-4716-b0d0-72bd347234cb.mp4
+
 
 
 
